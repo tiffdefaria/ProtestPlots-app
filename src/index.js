@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App'
+import ProtestPg from './ProtestPg';
 
 ReactDOM.render(
-   <React.StrictMode>
-     <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <div>
+        <Route exact path="/" component={App} />
+        <Route path="/protestpg" component={ProtestPg} />
+    </div>
+  </BrowserRouter>,
   document.getElementById('root')
 )
