@@ -13,7 +13,7 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#title">ProtestPlots</Navbar.Brand>
-          <Nav activeKey="/">
+          <Nav className="me-auto" activeKey="/">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/protestpg">Find Protests</Nav.Link>
           </Nav>

@@ -1,0 +1,33 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .sidebar-h2 {
+    margin: 0;
+    
+  }
+
+  @media screen and (min-width: 799px) {
+    .sidebar {
+      display: grid;
+      align-items: start;
+      grid-template-areas:
+        'header';
+      align-content: space-between;
+      justify-content: center;
+      gap: 0.5vw 1vw;
+      padding: 20px;
+    }
+  
+    .sidebar-h2 {
+      grid-area: header;
+      text-align: right;
+      font-weight: bold;
+    }
+
+  }
