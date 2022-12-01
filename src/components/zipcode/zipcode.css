@@ -1,0 +1,82 @@
+.zipcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 110%;
+    padding: 10px;
+  }
+  
+  .zipcode-h2 {
+    margin: 0;
+  }
+  
+  .zipcode-label {
+    margin: 10px 0;
+    text-align: left;
+    width: 80%;
+  }
+  
+  .zipcode-input,
+  .zipcode-textarea {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid var(--main-blue);
+    border-radius: 2px;
+    padding: 10px;
+  }
+  
+  .zipcode-textarea {
+    height: 50px;
+  }
+  
+  .zipcode-textarea::placeholder {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+  }
+  
+  .zipcode-submit {
+    justify-self: flex-end;
+    font-size: 3rem;
+    color: var(--main-blue);
+  }
+  
+  @media screen and (min-width: 799px) {
+    .zipcode {
+      display: grid;
+      grid-template-areas:
+        'label'
+        'header'
+        'zipcode'
+        'submit';
+      align-items: start;
+      align-content: space-between;
+      justify-content: unset;
+      gap: 0.5vw 1vw;
+      padding: 40px;
+    }
+  
+    .zipcode-h2 {
+      grid-area: header;
+      text-align: left;
+    }
+  
+    .zipcode-label {
+      grid-area: label;
+      margin: 0;
+    }
+  
+    #zipcode {
+      grid-area: zipcode;
+    }
+  
+    .zipcode-textarea {
+      height: 150px;
+    }
+  
+    .zipcode-submit {
+      grid-area: submit;
+    }
+  }
