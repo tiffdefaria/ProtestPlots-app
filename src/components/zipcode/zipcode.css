@@ -1,3 +1,4 @@
+
 .zipcode {
     display: flex;
     flex-direction: column;
@@ -9,6 +10,15 @@
   
   .zipcode-h2 {
     margin: 0;
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color : rgb(230, 238, 11);
+    font : 3rem 'Carton Six', cursive;
+    vertical-align: middle;
+    text-align: center;
   }
   
   .zipcode-label {

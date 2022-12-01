@@ -7,11 +7,17 @@ const formInputs = [
   { id: 'zipcode', type: 'text', label: 'Enter your zipcode', placeholder: 'Ex. 32612' },
 ]
 
-const Zipcode = () => (
-  <form className="zipcode">
-    <h2 className="map-h2">Welcome to Protest Plots!</h2>
-    <h2 className="zipcode-h2">Find protests based on your location</h2>
+const handleSubmit = (e) => {
+  e.preventDefault()
+  const zipcode = e.target.elements.zipcode.value
+  console.log(zipcode)
+  window.location.href = '/protestpg/' + zipcode
+}
 
+const Zipcode = () => (
+  <form onSubmit={handleSubmit} className="zipcode">   
+    <h1>Welcome to Protest Plots!</h1>
+    <h2 className="zipcode-h2">Find protests based on your location</h2>
     {
     formInputs.map(input => (
       <label key={input.label} id={input.id} className="zipcode-label">
@@ -24,6 +30,12 @@ const Zipcode = () => (
             className="zipcode-input"
             type={input.type}
             placeholder={input.placeholder}
+            maxLength="5"
+            // pass input to handleSubmit
+            name={input.id}
+
+
+
           />
         )}
       </label>
@@ -31,10 +43,7 @@ const Zipcode = () => (
     }
 
     <Icon className="zipcode-submit" icon={sendCircle} />
-
-    {/* { <button className="form-submit" type="button">
-      Search
-    </button> } */}
+    { <button onCilck = {(e) => {window.location.href = '/protestpg'}} className="zipcode-submit">Submit</button> }
   </form>
 )
 
