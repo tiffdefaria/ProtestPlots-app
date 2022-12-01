@@ -1,6 +1,9 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
+import json from '../../credentials.json'
 import './map.css'
+
+fetch('../credentials.json')
 
 const Map = ({ location, zoomLevel }) => (
     <div className="map">
@@ -8,7 +11,7 @@ const Map = ({ location, zoomLevel }) => (
   
       <div className="google-map">
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '' }}
+          bootstrapURLKeys={{ key: json.key }}
           defaultCenter={location}
           defaultZoom={zoomLevel}
         >

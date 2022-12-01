@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/src/credentials.json
 /.pnp
 .pnp.js
 
