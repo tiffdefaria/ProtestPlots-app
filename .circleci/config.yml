@@ -15,12 +15,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
+          name: "Run"
           command: "echo Hello, World!"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  run-workflow:
+  say-hello-workflow:
     jobs:
       - run
