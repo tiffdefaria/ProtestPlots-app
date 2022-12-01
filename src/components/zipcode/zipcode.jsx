@@ -2,7 +2,6 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import sendCircle from '@iconify/icons-mdi/map-search'
 import './zipcode.css'
-
 const formInputs = [
   { id: 'zipcode', type: 'text', label: 'Enter your zipcode', placeholder: 'Ex. 32612' },
 ]
@@ -15,9 +14,10 @@ const handleSubmit = (e) => {
 }
 
 const Zipcode = () => (
+  <div class = "background-image">
   <form onSubmit={handleSubmit} className="zipcode">   
     <h1>Welcome to Protest Plots!</h1>
-    <h2 className="zipcode-h2">Find protests based on your location</h2>
+      <h2>Find a protest near you!</h2>
     {
     formInputs.map(input => (
       <label key={input.label} id={input.id} className="zipcode-label">
@@ -31,20 +31,17 @@ const Zipcode = () => (
             type={input.type}
             placeholder={input.placeholder}
             maxLength="5"
-            // pass input to handleSubmit
             name={input.id}
-
-
-
           />
         )}
       </label>
     ))
     }
 
-    <Icon className="zipcode-submit" icon={sendCircle} />
-    { <button onCilck = {(e) => {window.location.href = '/protestpg'}} className="zipcode-submit">Submit</button> }
+   
+    { <button onCilck = {(e) => {window.location.href = '/protestpg'}} className="zipcode-submit"> <Icon className="zipcode-submit" icon={sendCircle} /></button> }
   </form>
+  </div>
 )
 
 export default Zipcode

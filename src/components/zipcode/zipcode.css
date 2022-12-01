@@ -7,32 +7,46 @@
     max-width: 110%;
     padding: 10px;
   }
-  
-  .zipcode-h2 {
-    margin: 0;
-  }
+
+  .background-image{
+    background-image: url("../../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: saturation;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    }
   h1{
     font-size: 2.5rem;
     font-weight: 700;
-    margin: 0;
-    color : rgb(230, 238, 11);
+    color : rgb(255, 255, 255);
     font : 3rem 'Carton Six', cursive;
     vertical-align: middle;
     text-align: center;
   }
-  
+  h2 {
+    color: white;
+    font : 1.5rem 'Carton Six', cursive;
+    text-align: center;
+    vertical-align: middle;
+  }
   .zipcode-label {
     margin: 10px 0;
     text-align: left;
     width: 80%;
+    color : white;
   }
   
   .zipcode-input,
   .zipcode-textarea {
-    display: block;
+    display: flex;
     margin-top: 5px;
     font-size: 1rem;
-    width: 100%;
+    width: 45%;
     border: 1px solid var(--main-blue);
     border-radius: 2px;
     padding: 10px;
@@ -48,10 +62,18 @@
   }
   
   .zipcode-submit {
-    justify-self: flex-end;
-    font-size: 3rem;
-    color: var(--main-blue);
+    display: flex;
+    align-items: center;
+    background: #fc7020;
+    color: white;
+    border-style: outset;
+    border-color: #bdacab;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    opacity: 0.9;
   }
+ 
   
   @media screen and (min-width: 799px) {
     .zipcode {
