@@ -9,6 +9,7 @@ const formInputs = [
 
 const Zipcode = () => (
   <form className="zipcode">
+    <h2 className="map-h2">Welcome to Protest Plots!</h2>
     <h2 className="zipcode-h2">Find protests based on your location</h2>
 
     {
