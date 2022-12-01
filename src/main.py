@@ -1,4 +1,7 @@
 import time
+import sys
+import json
+import string
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -6,8 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from bs4 import BeautifulSoup as bs
-import json
-import string
 import pandas as pd
 
 def scrape(link_to_scrape):
@@ -107,5 +108,16 @@ def readPageSource(filename):
 
 
 ############ ACTUAL SCRIPT
-#scrape("change later")
-readPageSource('page_source.html')
+
+if (len(sys.argv) == 2):
+    if ('s' in sys.argv[1]):
+        scrape("change later")
+    if ('r' in sys.argv[1]):
+        readPageSource('page_source.html')
+        print("Dumped data to protest_data.json and protest_data.xlsx")
+elif (len(sys.argv) == 1): 
+    print("Please add flags to tell me what to do.")
+    print("'s': Scrape - Gather data and write to page_source.html.")
+    print("'r': Read - Read from page_source.html and write to protest_data.json and protest_data.xlsx.")
+else:
+    print("Too many arguments. Please use format 'py main.py sr'");
