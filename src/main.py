@@ -95,7 +95,8 @@ def readPageSource(filename):
 
     if not (len(titles) == len(raw_locations) == len(raw_dates)): 
         print("Invalid html input")
-        exit
+        exit()
+        
     # this for loop assumes that len(titles) == len(locations) == len(dates)
     for i in range(len(titles)):
         l = raw_locations[i]
