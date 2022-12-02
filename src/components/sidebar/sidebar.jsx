@@ -17,7 +17,7 @@ const Sidebar = () => (
                     <ul key={el.titles} >
                       <br></br>
                       <List.Content>
-                      {el.titles} {el.locations} {el.dates}
+                      <strong>{el.titles}</strong> <br></br> <b>{"Where:"}</b> {el.locations} <br></br> <b>{"When:"}</b> {el.dates}
                       </List.Content>
                     </ul>
                   );

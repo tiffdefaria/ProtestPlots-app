@@ -6,15 +6,12 @@
   @media screen and (min-width: 799px) {
     .sidebar-section {
       --offset-height: -630px;
-  
-      display: grid;
-      grid-template-columns: 3fr 1.5fr;
-      width: 50vw;
+      width: 40vw;
       height: 650px;
       margin: 0 auto;
       top: var(--offset-height);
-      left: 75%;
-      margin-left: -10vw;
+      left: 60%;
+      margin-left: 0vw;
       margin-bottom: var(--offset-height);
       position: relative;
       border-radius: 5px;
