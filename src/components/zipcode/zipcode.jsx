@@ -31,6 +31,8 @@ const Zipcode = () => (
             type={input.type}
             placeholder={input.placeholder}
             maxLength="5"
+            pattern="[0-9]*"
+            minLength="5"
             name={input.id}
           />
         )}
@@ -39,7 +41,10 @@ const Zipcode = () => (
     }
 
    
-    { <button onCilck = {(e) => {window.location.href = '/protestpg'}} className="zipcode-submit"> <Icon className="zipcode-submit" icon={sendCircle} /></button> }
+{/* make an icon button */}
+    <button onCilck = {(e) => {window.location.href = '/protestpg'}} type="submit" className="zipcode-button">
+      <Icon className = "icon-css" icon={sendCircle} />
+    </button>
   </form>
   </div>
 )
