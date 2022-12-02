@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Header, List } from "semantic-ui-react";
+import { Container, Grid, List } from "semantic-ui-react";
 import data from '../../protest_data.json';
 import './sidebar.css'
 
@@ -11,15 +11,15 @@ const Sidebar = () => (
         <Grid>
           <Grid.Row>
             <Grid.Column>
-              <Header>List</Header>
               <List>
                 {data.map(el => {
                   return (
-                    <List.Item  key={el.titles}>
+                    <ul key={el.titles} >
+                      <br></br>
                       <List.Content>
-                        {el.locations} {el.dates}
+                      {el.titles} {el.locations} {el.dates}
                       </List.Content>
-                    </List.Item>
+                    </ul>
                   );
                 })}
               </List>

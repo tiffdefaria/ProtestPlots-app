@@ -9,7 +9,15 @@
   
   .sidebar-h2 {
     margin: 0;
-    
+
+  }
+
+  .sidebar-ul {
+    margin: 0;
+  }
+
+  .sidebar-li {
+    margin: 0;
   }
 
   @media screen and (min-width: 799px) {
@@ -26,8 +34,20 @@
   
     .sidebar-h2 {
       grid-area: header;
-      text-align: right;
+      text-align: center;
       font-weight: bold;
+    }
+
+    .sidebar-ul {
+      list-style-type: none;
+    }
+
+    .sidebar-li {
+      border:1px solid rgb(255, 255, 255);
+      display:inline-block;
+      height:100px;
+      vertical-align: top;
+      width:100px;
     }
 
   }

@@ -9,7 +9,7 @@
   
       display: grid;
       grid-template-columns: 3fr 1.5fr;
-      width: 35vw;
+      width: 50vw;
       height: 650px;
       margin: 0 auto;
       top: var(--offset-height);
@@ -18,7 +18,7 @@
       margin-bottom: var(--offset-height);
       position: relative;
       border-radius: 5px;
-      overflow: hidden;
+      overflow: scroll;
       box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.15);
     }
   }
