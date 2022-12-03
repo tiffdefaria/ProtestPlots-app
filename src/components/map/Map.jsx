@@ -16,7 +16,7 @@ const LocationPin = ({ text }) => (
 
 const Map = ({ location, zoomLevel }) => (
     <div className="map">
-      <h1 className="map-h2">Find protests across Florida</h1>
+      <h2 className="map-h2">Find protests across Florida</h2>
   
       <div className="google-map">
         <GoogleMapReact

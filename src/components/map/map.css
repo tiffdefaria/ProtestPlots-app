@@ -7,7 +7,7 @@
   }
   
   .google-map {
-    width: 60%;
+    width: 70%;
     height: 60vh;
   }
   
@@ -19,13 +19,11 @@
   }
   
   .pin-icon {
-    font-size: 10rem;
     font : 1.5rem 'Trebuchet MS, sans-serif';
   }
   
   .pin-text {
-    font-size: 2em;
-    font : 1.5rem 'Trebuchet MS, sans-serif';
+    font : 1.2rem 'Trebuchet MS, sans-serif';
   }
   
   @media screen and (min-width: 799px) {
@@ -36,13 +34,15 @@
     .map-h2 {
       font-size: 1.3rem;
       font-weight: 400;
+      color: black;
     }
   
     .pin {
-      width: 12vw;
+      width: 10vw;
     }
   
     .pin-icon {
-      font-size: 5vw;
+      font-size: 3vw;
+      color:rgb(201, 0, 40);
     }
   }

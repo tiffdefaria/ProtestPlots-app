@@ -6,11 +6,11 @@
   @media screen and (min-width: 799px) {
     .sidebar-section {
       --offset-height: -630px;
-      width: 40vw;
+      width: 35vw;
       height: 650px;
       margin: 0 auto;
       top: var(--offset-height);
-      left: 60%;
+      left: 65%;
       margin-left: 0vw;
       margin-bottom: var(--offset-height);
       position: relative;
