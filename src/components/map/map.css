@@ -19,11 +19,13 @@
   }
   
   .pin-icon {
-    font : 1.5rem 'Trebuchet MS, sans-serif';
+    font : 1.5rem 'Trebuchet MS';
+    font-family: 'sans-serif';
   }
   
   .pin-text {
-    font : 1.2rem 'Trebuchet MS, sans-serif';
+    font : 1.2rem 'Trebuchet MS';
+    font-family: 'sans-serif';
   }
   
   @media screen and (min-width: 799px) {
