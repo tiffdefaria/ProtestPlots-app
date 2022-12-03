@@ -7,23 +7,25 @@
   }
   
   .google-map {
-    width: 100%;
+    width: 60%;
     height: 60vh;
   }
   
   .pin {
     display: flex;
-    align-items: center;
-    width: 180px;
+    align-items: left;
+    width: 150px;
     color: var(--main-blue);
   }
   
   .pin-icon {
-    font-size: 4rem;
+    font-size: 10rem;
+    font : 1.5rem 'Trebuchet MS, sans-serif';
   }
   
   .pin-text {
-    font-size: 1.3em;
+    font-size: 2em;
+    font : 1.5rem 'Trebuchet MS, sans-serif';
   }
   
   @media screen and (min-width: 799px) {
@@ -37,10 +39,10 @@
     }
   
     .pin {
-      width: 15vw;
+      width: 12vw;
     }
   
     .pin-icon {
-      font-size: 10vw;
+      font-size: 5vw;
     }
   }

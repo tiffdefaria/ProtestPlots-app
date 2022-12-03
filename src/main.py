@@ -2,6 +2,7 @@ import time
 import sys
 import json
 import string
+import re
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -74,33 +75,57 @@ def readPageSource(filename):
     # Get the data from it and store it in a dataframe.
     titles = []
     locations = []
+    zcodes = []
     dates = []
     ourData = pd.DataFrame({
         'titles':titles,
         'locations':locations, 
+        'zcodes': zcodes,
         'dates':dates
     })
 
     raw_titles = soupData.find_all('span', class_="")
+    raw_locations = soupData.find_all('span', class_="x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x676frb x1lkfr7t x1lbecb7 xo1l8bm xzsf02u x1yc453h")
+    raw_dates = soupData.find_all('span', class_="x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x4zkp8e x676frb x1nxh6w3 x1sibtaa x1s688f x1a1m0xk x1yc453h")
+
     for t in raw_titles:
         if (str(t).startswith('<span class="">') 
         and string.ascii_letters.count(str(t)[44])):
             titles.append(str(t)[44:-35])
 
-    raw_locations = soupData.find_all('span', class_="x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x676frb x1lkfr7t x1lbecb7 xo1l8bm xzsf02u x1yc453h")
-    for l in raw_locations:
+    if not (len(titles) == len(raw_locations) == len(raw_dates)): 
+        print("Invalid html input")
+        exit()
+        
+    # this for loop assumes that len(titles) == len(locations) == len(dates)
+    for i in range(len(titles)):
+        l = raw_locations[i]
+        d = raw_dates[i]
+
         locStart = str(l).rfind(' - ') + 3
         locEnd = str(l).rfind('\n')
-        locations.append(str(l)[locStart:locEnd])
+        l = (str(l)[locStart:locEnd])
 
-    raw_dates = soupData.find_all('span', class_="x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x4zkp8e x676frb x1nxh6w3 x1sibtaa x1s688f x1a1m0xk x1yc453h")
-    for d in raw_dates:
+        if not (re.search('(\d{5})', l)): 
+            titles[i] = 'TO_REMOVE'
+            continue
+        
+        zcodes.append(int(re.search(r'(\d{5})', l).group(0)))
+
         datStart = str(d).find('\n') + 26
         datEnd = str(d).rfind('\n')
-        dates.append(str(d)[datStart:datEnd])
+        d = (str(d)[datStart:datEnd])
 
-    ourData['titles'] = titles;
+        locations.append(l)
+        dates.append(d)
+
+        
+
+
+
+    ourData['titles'] = [t for t in titles if t != 'TO_REMOVE'];
     ourData['locations'] = locations;
+    ourData['zcodes'] = zcodes;
     ourData['dates'] = dates;
 
     ourData.to_json('protest_data.json', 'records')
