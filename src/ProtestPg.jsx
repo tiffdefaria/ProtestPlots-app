@@ -8,6 +8,7 @@ import SidebarSection from './components/sidebar/sidebar-section'
 import { Container } from "semantic-ui-react";
 import './ProtestPg.css'
 
+
 const location = {
     address: 'University of Florida',
     lat: 29.650721,
