@@ -62,7 +62,7 @@ def scrape(link_to_scrape):
     
     # Get a dump of the HTML.
     pageSource = driver.execute_script("return document.body.innerHTML;")
-    with open('page_source.html', 'w', encoding="utf-8") as htmlDump:
+    with open('page_source.txt', 'w', encoding="utf-8") as htmlDump:
         soupData = bs(pageSource, 'html.parser')
         htmlDump.write(str(soupData.prettify()))
 
@@ -116,6 +116,7 @@ def readPageSource(filename):
         datEnd = str(d).rfind('\n')
         d = (str(d)[datStart:datEnd])
 
+        l = l[re.search(r"(\d)", l).start():]
         locations.append(l)
         dates.append(d)
 
@@ -138,11 +139,11 @@ if (len(sys.argv) == 2):
     if ('s' in sys.argv[1]):
         scrape("change later")
     if ('r' in sys.argv[1]):
-        readPageSource('page_source.html')
+        readPageSource('page_source.txt')
         print("Dumped data to protest_data.json and protest_data.xlsx")
 elif (len(sys.argv) == 1): 
     print("Please add flags to tell me what to do.")
-    print("'s': Scrape - Gather data and write to page_source.html.")
-    print("'r': Read - Read from page_source.html and write to protest_data.json and protest_data.xlsx.")
+    print("'s': Scrape - Gather data and write to page_source.txt.")
+    print("'r': Read - Read from page_source.txt and write to protest_data.json and protest_data.xlsx.")
 else:
     print("Too many arguments. Please use format 'py main.py sr'");

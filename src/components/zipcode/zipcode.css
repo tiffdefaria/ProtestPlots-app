@@ -21,14 +21,14 @@
     z-index: -1;
     }
   h1{
-    color : rgb(255, 255, 255);
+    color : rgb(120, 120, 120);
     font : 3rem  "Roboto", sans-serif;
     vertical-align: middle;
     text-align: center;
   }
   
   h2 {
-    color: white;
+    color: rgb(255, 255, 255);
     font : 1.5rem "Roboto", sans-serif;
     text-align: center;
     vertical-align: middle;
