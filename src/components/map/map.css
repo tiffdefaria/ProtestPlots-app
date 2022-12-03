@@ -20,11 +20,12 @@
   
   .pin-icon {
     font-size: 10rem;
+    font : 1.5rem 'Trebuchet MS, sans-serif';
   }
   
   .pin-text {
     font-size: 2em;
-    font : 1.5rem 'Trebuchet MS';
+    font : 1.5rem 'Trebuchet MS, sans-serif';
   }
   
   @media screen and (min-width: 799px) {
