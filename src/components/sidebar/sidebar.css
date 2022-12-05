@@ -36,6 +36,7 @@
       grid-area: header;
       text-align: center;
       font-weight: bold;
+      color: black;
     }
 
     .sidebar-ul {
