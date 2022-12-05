@@ -124,10 +124,10 @@ def readPageSource(filename):
 
 
 
-    ourData['titles'] = [t for t in titles if t != 'TO_REMOVE'];
-    ourData['locations'] = locations;
-    ourData['zcodes'] = zcodes;
-    ourData['dates'] = dates;
+    ourData['titles'] = [t for t in titles if t != 'TO_REMOVE']
+    ourData['locations'] = locations
+    ourData['zcodes'] = zcodes
+    ourData['dates'] = dates
 
     ourData.to_json('protest_data.json', 'records')
     ourData.to_excel('protest_data.xlsx')
@@ -146,4 +146,4 @@ elif (len(sys.argv) == 1):
     print("'s': Scrape - Gather data and write to page_source.txt.")
     print("'r': Read - Read from page_source.txt and write to protest_data.json and protest_data.xlsx.")
 else:
-    print("Too many arguments. Please use format 'py main.py sr'");
+    print("Too many arguments. Please use format 'py main.py sr'")
