@@ -20,12 +20,12 @@
   
   .pin-icon {
     font : 1.5rem 'Trebuchet MS';
-    font-family: 'sans-serif';
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   }
   
   .pin-text {
     font : 1.2rem 'Trebuchet MS';
-    font-family: 'sans-serif';
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   }
   
   @media screen and (min-width: 799px) {
