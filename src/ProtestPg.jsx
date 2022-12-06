@@ -16,7 +16,6 @@ const location = {
     lat: parseFloat(zipcodeJson[localStorage["Zipcode"]][1]),
     lng: parseFloat(zipcodeJson[localStorage["Zipcode"]][0]),
 }
-console.log(localStorage["Zipcode"]);
 
 function ProtestPg() {
   return (

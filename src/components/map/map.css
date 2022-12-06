@@ -19,14 +19,13 @@
   }
   
   .pin-icon {
-    font : 1.5rem 'Trebuchet MS';
+    font : 1.5rem;
     font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   }
   
   .pin-text {
-    font : 1.2rem 'Trebuchet MS';
-    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-    font-size: 1.5rem;
+    font-family : Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 1.3rem;
     align-items: center;
     font-weight: 700;
   }
