@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login {
+  position: relative;
+}
+
+:root {
+  --main-blue: #00253a;
+  --main-green: #2e933c;
+  --white: #ffffff;
+}
+
+.login__container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+    background-color: #dcdcdc;
+    padding: 30px;
+}
+.login__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.login__btn {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    background-color: black;
+}
+.login__google {
+    background-color: #4285f4;
+}
+.login div {
+    margin-top: 7px;
+}
