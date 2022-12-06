@@ -2,15 +2,17 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import sendCircle from '@iconify/icons-mdi/map-search'
 import './zipcode.css'
+
+// localStorage.setItem("Zipcode", 32612);
+
 const formInputs = [
   { id: 'zipcode', type: 'text', label: 'Enter your zipcode', placeholder: 'Ex. 32612' },
 ]
 
 const handleSubmit = (e) => {
-  e.preventDefault()
-  const zipcode = e.target.elements.zipcode.value
-  console.log(zipcode)
-  window.location.href = '/protestpg/' + zipcode
+  e.preventDefault();
+  localStorage.setItem("Zipcode", e.target.elements.zipcode.value);
+  window.location.href = '/protestpg/';
 }
 
 const Zipcode = () => (
@@ -41,12 +43,11 @@ const Zipcode = () => (
     }
 
    
-{/* make an icon button */}
+{}
     <button onCilck = {(e) => {window.location.href = '/protestpg'}} type="submit" className="zipcode-button">
       <Icon className = "icon-css" icon={sendCircle} />
     </button>
   </form>
   </div>
 )
-
 export default Zipcode
