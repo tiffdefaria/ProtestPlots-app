@@ -32,7 +32,11 @@ function Login() {
           </Nav>
         </Container>
       </Navbar>
+
       <div className="login__container">
+      <h1 className="login__h1">
+        Login to ProtestPlots
+      </h1>
         <input
           type="text"
           className="login__textBox"
@@ -54,13 +58,13 @@ function Login() {
           Login
         </button>
         <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
+          Continue with Google
         </button>
-        <div>
+        <div className = "login__options">
           <Link to="/reset">Forgot Password</Link>
         </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+        <div className = "login__options">
+          Don't have an account?&nbsp;<Link to="/register">Register</Link>&nbsp;now.
         </div>
       </div>
     </div>
