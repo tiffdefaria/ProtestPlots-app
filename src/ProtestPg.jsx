@@ -7,13 +7,16 @@ import MapSection from './components/map/Map'
 import SidebarSection from './components/sidebar/sidebar-section'
 import { Container } from "semantic-ui-react";
 import './ProtestPg.css'
-
+import './components/zipcode/zipcode'
+import zipcodeJson from './zipcodes.json'
+fetch('../zipcodes.json')
 
 const location = {
-    address: 'University of Florida',
-    lat: 29.650721,
-    lng: -82.349792,
+    address: 'Current location',
+    lat: parseFloat(zipcodeJson[localStorage["Zipcode"]][1]),
+    lng: parseFloat(zipcodeJson[localStorage["Zipcode"]][0]),
 }
+console.log(localStorage["Zipcode"]);
 
 function ProtestPg() {
   return (
@@ -27,7 +30,7 @@ function ProtestPg() {
           </Nav>
         </Container>
       </Navbar>
-      <MapSection location={location} zoomLevel={17} /> {}
+      <MapSection location={location} zoomLevel={15} /> {}
       <SidebarSection />
     </div>
   )
