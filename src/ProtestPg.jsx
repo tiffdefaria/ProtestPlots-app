@@ -10,6 +10,12 @@ import './components/zipcode/zipcode'
 import zipcodeJson from './zipcodes.json'
 fetch('../zipcodes.json')
 
+console.log(localStorage["Zipcode"]);
+
+if(localStorage["Zipcode"] == null || localStorage["Zipcode"] === ""){
+  localStorage.setItem("Zipcode", 32612);
+}
+
 const location = {
     address: 'Current location',
     lat: parseFloat(zipcodeJson[localStorage["Zipcode"]][1]),
