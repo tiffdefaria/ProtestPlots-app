@@ -19,18 +19,22 @@
   }
   
   .pin-icon {
-    font-size: 1.5rem;
+    font : 1.5rem 'Trebuchet MS';
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   }
   
   .pin-text {
-    font-size: 1.2rem;
+    font : 1.2rem 'Trebuchet MS';
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 1.5rem;
     align-items: center;
     font-weight: 700;
   }
   
   @media screen and (min-width: 799px) {
     .google-map {
-      height: 80vh;
+      height: 90vh;
+      width: 80vw;
     }
   
     .map-h2 {
