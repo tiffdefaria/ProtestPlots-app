@@ -18,7 +18,7 @@ def scrapeGNV():
     chrome_options.add_argument('disable-notifications')
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(options=chrome_options)
-    url = 'https://facebook.com'
+    url = 'http://facebook.com'
 
     driver.get(url)
 
