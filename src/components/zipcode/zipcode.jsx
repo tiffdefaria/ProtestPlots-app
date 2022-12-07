@@ -3,8 +3,6 @@ import { Icon } from '@iconify/react'
 import sendCircle from '@iconify/icons-mdi/map-search'
 import './zipcode.css'
 
-// localStorage.setItem("Zipcode", 32612);
-
 const formInputs = [
   { id: 'zipcode', type: 'text', label: 'Enter your zipcode', placeholder: 'Ex. 32612' },
 ]

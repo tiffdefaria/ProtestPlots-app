@@ -18,10 +18,6 @@ code {
     monospace;
 }
 
-.login {
-  position: relative;
-}
-
 :root {
   --main-blue: #00253a;
   --main-green: #2e933c;
@@ -33,6 +29,7 @@ code {
   background: rgba(35, 59, 215, 0.8);
   height: 100vh;
   display: flex;
+  position: relative;
   justify-content: top;
   flex-direction: column;
 }
