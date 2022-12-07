@@ -33,8 +33,8 @@ code {
   background: rgba(35, 59, 215, 0.8);
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;  
+  justify-content: top;
+  flex-direction: column;
 }
 .login__h1
 {
