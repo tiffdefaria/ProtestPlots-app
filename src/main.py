@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 
-def scrapeGNV():
+def scrape_gnv():
     # open the site and block pop-ups
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('disable-notifications')
@@ -68,7 +68,7 @@ def scrapeGNV():
 
     driver.close()
 
-def scrapeNY():
+def scrape_ny():
     # open the site and block pop-ups
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('disable-notifications')
@@ -124,7 +124,7 @@ def scrapeNY():
 
     driver.close()
 
-def readPageSourceGNV(filename):
+def readsource_gnv(filename):
     with open(filename) as htmlDump:
         soupData = bs(htmlDump, 'html.parser')
 
@@ -170,7 +170,7 @@ def readPageSourceGNV(filename):
     ourData['dates'] = dates
 
 
-def readPageSourceNY(filename):
+def readsource_ny(filename):
     with open(filename) as htmlDump:
         soupData = bs(htmlDump, 'html.parser')
     
@@ -200,7 +200,7 @@ def readPageSourceNY(filename):
             titles[i] = 'TO_REMOVE'
             continue
 
-        if (('Zoom' in l)):
+        if ('Zoom' in l):
             titles[i] = 'TO_REMOVE'
             continue
         zcodes.append(int(re.search(r'(\d{5})', l).group(0)))
@@ -219,10 +219,10 @@ def readPageSourceNY(filename):
     ourDataNY['dates'] = dates
 
 
-def writeToJson(ourData, filename = "protest_data.json"):
+def write_json(ourData, filename = "protest_data"):
 
-    ourData.to_json('protest_data.json', 'records')
-    ourData.to_excel('protest_data.xlsx')
+    ourData.to_json(filename + '.json', 'records')
+    ourData.to_excel(filename + '.xlsx')
 
 ############ ACTUAL SCRIPT
 
@@ -246,21 +246,21 @@ ourDataNY = pd.DataFrame({
 
 if (len(sys.argv) == 2):
     if ('s' in sys.argv[1]):
-            scrapeGNV()
-            scrapeNY()
+            scrape_gnv()
+            scrape_ny()
 
     if ('r' in sys.argv[1]):
-        readPageSourceGNV('page_source.txt')
+        readsource_gnv('page_source.txt')
         # reset the variables
         titles = []
         locations = []
         zcodes = []
         dates = []
-        readPageSourceNY('page_source2.txt')
+        readsource_ny('page_source2.txt')
         # combine the two dataframes
         combined = pd.concat([ourData, ourDataNY], ignore_index=True)
         # write the combined dataframe
-        writeToJson(combined)
+        write_json(combined)
         print("Dumped data to protest_data.json and protest_data.xlsx")
 elif (len(sys.argv) == 1): 
     print("Please add flags to tell me what to do.")
